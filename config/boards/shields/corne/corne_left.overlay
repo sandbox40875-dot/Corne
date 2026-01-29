@@ -11,6 +11,6 @@
 
 / {
     chosen {
-        zmk,display = &oled;
+        zephyr,display = &oled;
     };
 };
