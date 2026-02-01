@@ -1,16 +1,18 @@
 #include "corne.dtsi"
 
 &default_transform {
-    col-offset = <6>;  
+    col-offset = <6>;
 };
 
 &kscan0 {
-    col-gpios = <&pro_micro 017 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 011 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 100 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 024 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 022 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 020 GPIO_ACTIVE_HIGH>;
+    col-gpios = <
+        &gpio0 20 GPIO_ACTIVE_HIGH   /* Col 5 */
+        &gpio0 22 GPIO_ACTIVE_HIGH   /* Col 4 */
+        &gpio0 24 GPIO_ACTIVE_HIGH   /* Col 3 */
+        &gpio1 0  GPIO_ACTIVE_HIGH   /* Col 2 */
+        &gpio0 11 GPIO_ACTIVE_HIGH   /* Col 1 */
+        &gpio0 17 GPIO_ACTIVE_HIGH   /* Col 0 */
+    >;
 };
 
 / {
@@ -18,4 +20,3 @@
         zephyr,display = &oled;
     };
 };
-		
