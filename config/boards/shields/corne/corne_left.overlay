@@ -1,14 +1,17 @@
 #include "corne.dtsi"
 
-&kscan0 {
-    col-gpios = <
-        &gpio0 17 GPIO_ACTIVE_HIGH
-        &gpio0 11 GPIO_ACTIVE_HIGH
-        &gpio1 0  GPIO_ACTIVE_HIGH
-        &gpio0 24 GPIO_ACTIVE_HIGH
-        &gpio0 22 GPIO_ACTIVE_HIGH
-        &gpio0 20 GPIO_ACTIVE_HIGH
-    >;
+/ {
+    matrix {
+        /* LEFT HALF – COLUMNS */
+        col-gpios = <
+            &gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 0 */
+            &gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 1 */
+            &gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 2 */
+            &gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 3 */
+            &gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 4 */
+            &gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)  /* Col 5 */
+        >;
+    };
 };
 
  / {
