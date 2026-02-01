@@ -1,20 +1,18 @@
 #include "corne.dtsi"
 
 &kscan0 {
-    col-gpios = <&pro_micro 017 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 011 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 100 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 024 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 022 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 020 GPIO_ACTIVE_HIGH>;
+    col-gpios = <
+        &gpio0 17 GPIO_ACTIVE_HIGH
+        &gpio0 11 GPIO_ACTIVE_HIGH
+        &gpio1 0  GPIO_ACTIVE_HIGH
+        &gpio0 24 GPIO_ACTIVE_HIGH
+        &gpio0 22 GPIO_ACTIVE_HIGH
+        &gpio0 20 GPIO_ACTIVE_HIGH
+    >;
 };
 
-/ {
+ / {
     chosen {
         zephyr,display = &oled;
     };
 };
-
-
-
-
