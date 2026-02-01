@@ -11,6 +11,7 @@
 
 
 
+#include "corne.dtsi"
 
 &i2c0 {
     status = "okay";
@@ -19,7 +20,6 @@
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
 
-        /* REQUIRED by Zephyr 3.5 binding */
         width = <128>;
         height = <32>;
 
@@ -29,14 +29,12 @@
 
         multiplex-ratio = <31>;
         prechargep = <0x22>;
-
-        /* Correct scan direction for Corne OLED */
         com-invdir;
     };
 };
 
 / {
     chosen {
-        zmk,display = &oled;
+        zephyr,display = &oled;
     };
 };
