@@ -1,6 +1,5 @@
 #include "corne.dtsi"
 
-/* Column GPIOs – unchanged */
 &kscan0 {
     col-gpios = <
         &pro_micro 2 GPIO_ACTIVE_HIGH
@@ -12,13 +11,12 @@
     >;
 };
 
-/* I2C1 with explicit SDA/SCL pins */
 &i2c1 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
 
-    sda-gpios = <&pro_micro 31 GPIO_ACTIVE_HIGH>;
-    scl-gpios = <&pro_micro 29 GPIO_ACTIVE_HIGH>;
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
