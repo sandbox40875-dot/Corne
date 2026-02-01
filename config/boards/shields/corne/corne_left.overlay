@@ -1,20 +1,24 @@
 #include "corne.dtsi"
 
+/* Column GPIOs – unchanged */
 &kscan0 {
-    col-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 7 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 8 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 5 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 4 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 3 GPIO_ACTIVE_HIGH>;
+    col-gpios = <
+        &pro_micro 2 GPIO_ACTIVE_HIGH
+        &pro_micro 7 GPIO_ACTIVE_HIGH
+        &pro_micro 8 GPIO_ACTIVE_HIGH
+        &pro_micro 5 GPIO_ACTIVE_HIGH
+        &pro_micro 4 GPIO_ACTIVE_HIGH
+        &pro_micro 3 GPIO_ACTIVE_HIGH
+    >;
 };
 
-
-
-#include "corne.dtsi"
-
-&i2c0 {
+/* I2C1 with explicit SDA/SCL pins */
+&i2c1 {
     status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    sda-gpios = <&pro_micro 31 GPIO_ACTIVE_HIGH>;
+    scl-gpios = <&pro_micro 29 GPIO_ACTIVE_HIGH>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -26,10 +30,8 @@
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-
         multiplex-ratio = <31>;
         prechargep = <0x22>;
-        com-invdir;
     };
 };
 
