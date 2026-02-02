@@ -11,14 +11,14 @@
         rwin: rwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp LEFT_GUI &kp RIGHT_ARROW>;
+            bindings = <&kp LG(RC(RIGHT_ARROW))>;
             label = "rwin";
         };
 
         lwin: lwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp LEFT_GUI &kp LEFT_ARROW>;
+            bindings = <&kp LG(RC(LEFT_ARROW))>;
             label = "lwin";
         };
     };
