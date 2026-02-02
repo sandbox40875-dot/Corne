@@ -23,7 +23,10 @@
             compatible = "zmk,physical-layout";
             display-name = "Corne";
 
-            /* row, col, x, y */
+            /* THIS LINE WAS MISSING */
+            transform = <&matrix_transform>;
+
+            /* row col x y rotation */
             keys = <
                 /* LEFT HALF */
                 0  0   0   0   0
