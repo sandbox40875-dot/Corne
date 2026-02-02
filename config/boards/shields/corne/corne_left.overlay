@@ -16,6 +16,9 @@
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
 
+        label = "OLED";
+        status = "okay";
+
         width = <128>;
         height = <32>;
 
@@ -26,8 +29,9 @@
         prechargep = <0x22>;
     };
 };
-/ {
+
+&{/} {
     chosen {
-        zephyr,display = &i2c0;
+        zephyr,display = &oled;
     };
 };
