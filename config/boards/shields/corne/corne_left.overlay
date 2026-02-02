@@ -52,10 +52,8 @@
     };
 };
 
-&{/} {
+/ {
     chosen {
         zephyr,display = &oled;
     };
-};
-
 };
