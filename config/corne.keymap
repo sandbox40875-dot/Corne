@@ -21,7 +21,37 @@
             bindings = <&kp LCTRL &kp LG(LEFT_ARROW)>;
             label = "lwin";
         };
+
+        /* =========================
+         * Office / Corporate Apps
+         * ========================= */
+
+        teams_macro: teams_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp N1>;
+        };
+
+        outlook_macro: outlook_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp N2>;
+        };
+
+        w365_macro: w365_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp N3>;
+        };
+
+        browser_macro: browser_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp N4>;
+        };
     };
+};
+
 
     keymap {
         compatible = "zmk,keymap";
