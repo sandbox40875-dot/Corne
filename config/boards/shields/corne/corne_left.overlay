@@ -43,7 +43,7 @@
 
         width = <128>;
         height = <32>;
-
+		charge-pump;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
