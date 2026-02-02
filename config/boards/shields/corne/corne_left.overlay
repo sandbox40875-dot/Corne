@@ -9,12 +9,21 @@
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 };
 
-&i2c0 {
-    compatible = "nordic,nrf-twim";
-    status = "okay";
 
-    sda-pin = <2>;   /* P0.02 → nice!nano pin 31 (label 2) */
-    scl-pin = <3>;   /* P0.03 → nice!nano pin 29 (label 3) */
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>;
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
