@@ -1,5 +1,8 @@
 #include "corne.dtsi"
 
+/* --------------------
+ * Matrix scan (unchanged)
+ * -------------------- */
 &kscan0 {
     col-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 7 GPIO_ACTIVE_HIGH>,
@@ -7,4 +10,32 @@
                 <&pro_micro 5 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 4 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
+};
+
+/* --------------------
+ * REQUIRED for ZMK Studio
+ * -------------------- */
+ / {
+    zmk,physical-layouts {
+        compatible = "zmk,physical-layouts";
+
+        corne: physical-layout {
+            compatible = "zmk,physical-layout";
+            display-name = "Corne";
+
+            keys = <
+                /* LEFT HALF */
+                &kp Q &kp W &kp E &kp R &kp T
+                &kp A &kp S &kp D &kp F &kp G
+                &kp Z &kp X &kp C &kp V &kp B
+                     &kp LSHIFT &kp SPACE &kp LCTRL
+
+                /* RIGHT HALF */
+                &kp Y &kp U &kp I &kp O &kp P
+                &kp H &kp J &kp K &kp L &kp SEMI
+                &kp N &kp M &kp COMMA &kp DOT &kp SLASH
+                     &kp RCTRL &kp ENTER &kp BSPC
+            >;
+        };
+    };
 };
