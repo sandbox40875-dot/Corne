@@ -1,43 +1,32 @@
-/* =========================================================================
- * Corne Left Shield Overlay
- * Board: nice_nano_v2
- * OLED: SSD1306 (I2C, 128x32)
- * ========================================================================= */
-
 #include "corne.dtsi"
 
-/* ------------------------------
- * Column GPIOs
- * ------------------------------ */
 &kscan0 {
-    col-gpios = <
-        &pro_micro 2 GPIO_ACTIVE_HIGH
-        &pro_micro 7 GPIO_ACTIVE_HIGH
-        &pro_micro 8 GPIO_ACTIVE_HIGH
-        &pro_micro 5 GPIO_ACTIVE_HIGH
-        &pro_micro 4 GPIO_ACTIVE_HIGH
-        &pro_micro 3 GPIO_ACTIVE_HIGH
-    >;
+    col-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 7 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 8 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 5 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 4 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 };
 
-/* ------------------------------
- * I2C1 + SSD1306 OLED
- * ------------------------------ */
-&i2c1 {
+&i2c0 {
     status = "okay";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
+
         width = <128>;
         height = <32>;
+
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        prechargep = <0x22>;
     };
 };
-
-/* ------------------------------
- * ZMK display selection
- * ------------------------------ */
- / {
+/ {
     chosen {
         zephyr,display = &oled;
     };
