@@ -10,7 +10,11 @@
 };
 
 &i2c0 {
+    compatible = "nordic,nrf-twim";
     status = "okay";
+
+    sda-pin = <2>;   /* P0.02 → nice!nano pin 31 (label 2) */
+    scl-pin = <3>;   /* P0.03 → nice!nano pin 29 (label 3) */
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
