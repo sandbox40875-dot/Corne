@@ -103,15 +103,6 @@
             >;
         };
 
-        arrow {
-            bindings = <
-&trans  &trans  &trans  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp BACKSPACE      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans           &kp UP_ARROW       &kp ENTER          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW     &kp RIGHT_ARROW    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans           &trans             &trans             &trans  &trans  &trans
-            >;
-        };
-
         /* =========================================================
          * HIDDEN / MAINTENANCE LAYER
          * ========================================================= */
