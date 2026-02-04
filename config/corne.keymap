@@ -29,7 +29,7 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LC(C)>;
+            bindings = <&kp LC(C)>, <&macro_release>;
 
             label = "COPY";
         };
@@ -37,7 +37,7 @@
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LC(V)>;
+            bindings = <&kp LC(V)>, <&macro_release>;
 
             label = "PASTE";
         };
@@ -67,18 +67,6 @@
             layers = <0>;
         };
 
-        lwin {
-            bindings = <&lwin>;
-            key-positions = <36 37>;
-            layers = <0>;
-        };
-
-        rwin {
-            bindings = <&rwin>;
-            key-positions = <37 38>;
-            layers = <0>;
-        };
-
         gaming {
             bindings = <&tog 6>;
             key-positions = <33 34 35>;
@@ -87,20 +75,6 @@
     };
 
     behaviors {
-        copyTAP: copyTAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COPYTAP";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&copyTAP>;
-        };
-
-        pasteTAP: pasteTAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PASTETAP";
-            #binding-cells = <0>;
-            bindings = <&kp V>, <&pasteTAP>;
-        };
-
         selextalltap: selextalltap {
             compatible = "zmk,behavior-tap-dance";
             label = "SELEXTALLTAP";
@@ -128,6 +102,20 @@
             #binding-cells = <0>;
             bindings = <&kp X>, <&new_file>;
         };
+
+        PASTETAP: PASTETAP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PASTETAP";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&none>;
+        };
+
+        COPTTAP: COPTTAP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPTTAP";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&none>;
+        };
     };
 
     keymap {
@@ -141,7 +129,7 @@
             bindings = <
 &kp ESC         &qTap          &kp W  &kp E          &lt 5 R    &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
 &kp LEFT_SHIFT  &selextalltap  &kp S  &kp D          &kp F      &enterTap    &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
-&kp LCTRL       &kp LALT       &kp Z  &new_fileXTAP  &copyTAP   &pasteTAP    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
+&kp LCTRL       &kp LALT       &kp Z  &new_fileXTAP  &COPTTAP   &PASTETAP    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
                                       &kp LGUI       &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
             >;
         };
