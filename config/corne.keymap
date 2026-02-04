@@ -26,29 +26,6 @@
             bindings = <&kp LG(RC(LEFT_ARROW))>;
         };
 
-        copy: copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>, <&macro_press>;
-
-            label = "COPY";
-        };
-
-        paste: paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>, <&macro_press>;
-
-            label = "PASTE";
-        };
-
-        new_file: new_file {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(N)>;
-            label = "NEW_FILE";
-        };
-
         /* Office / Corporate Apps (Taskbar pinned) */
     };
 
@@ -100,21 +77,21 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NEW_FILEXTAP";
             #binding-cells = <0>;
-            bindings = <&kp X>, <&new_file>;
+            bindings = <&kp X>, <&kp LC(N)>;
         };
 
-        PASTETAP: PASTETAP {
+        COPYTAP: COPYTAP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPYTAP";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp RC(C)>;
+        };
+
+        pastetap: pastetap {
             compatible = "zmk,behavior-tap-dance";
             label = "PASTETAP";
             #binding-cells = <0>;
-            bindings = <&kp V>, <&none>;
-        };
-
-        COPTTAP: COPTTAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COPTTAP";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&none>;
+            bindings = <&kp V>, <&kp LC(V)>;
         };
     };
 
@@ -129,7 +106,7 @@
             bindings = <
 &kp ESC         &qTap          &kp W  &kp E          &lt 5 R    &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
 &kp LEFT_SHIFT  &selextalltap  &kp S  &kp D          &kp F      &enterTap    &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
-&kp LCTRL       &kp LALT       &kp Z  &new_fileXTAP  &COPTTAP   &PASTETAP    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
+&kp LCTRL       &kp LALT       &kp Z  &new_fileXTAP  &COPYTAP   &pastetap    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
                                       &kp LGUI       &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
             >;
         };
