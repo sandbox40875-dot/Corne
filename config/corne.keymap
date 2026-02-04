@@ -40,7 +40,7 @@
 
         gaming {
             bindings = <&tog 6>;
-            key-positions = <34 35 24 25>;
+            key-positions = <34 35 33>;
             layers = <6 0>;
         };
 
@@ -58,14 +58,8 @@
 
         LAyer3 {
             bindings = <&tog 3>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
             layers = <0>;
-        };
-
-        media2 {
-            bindings = <&tog 5>;
-            key-positions = <39 41 40>;
-            layers = <0 5>;
         };
 
         NFILE {
@@ -127,7 +121,7 @@
 
         BT {
             bindings = <
-&none       &none           &none            &none         &none         &none           &none  &none  &none  &none  &none  &none
+&tog 4      &none           &none            &none         &none         &none           &none  &none  &none  &none  &none  &none
 &bt BT_CLR  &bt BT_CLR_ALL  &kp KP_NUMBER_4  &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
 &trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
                                              &none         &none         &none           &none  &none  &none
@@ -136,7 +130,7 @@
 
         media {
             bindings = <
-&trans  &trans  &trans  &trans    &trans           &kp BACKSPACE    &trans           &trans     &trans     &trans  &trans  &trans
+&tog 5  &trans  &trans  &trans    &trans           &kp BACKSPACE    &trans           &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans    &trans           &kp ENTER        &kp C_VOLUME_UP  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans    &kp C_VOLUME_UP  &kp C_VOL_DN     &kp C_VOL_DN     &trans     &trans     &trans  &trans  &trans
                         &kp LEFT  &kp RIGHT_ARROW  &trans           &kp LEFT         &kp SPACE  &kp RIGHT
