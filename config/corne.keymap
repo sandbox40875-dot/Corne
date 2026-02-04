@@ -26,6 +26,20 @@
             bindings = <&kp LG(RC(LEFT_ARROW))>;
         };
 
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+            label = "COPY";
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "PASTE";
+        };
+
         /* Office / Corporate Apps (Taskbar pinned) */
     };
 
@@ -35,16 +49,80 @@
         back {
             bindings = <&kp BACKSPACE>;
             key-positions = <4 5>;
+            layers = <0>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <16 17>;
+            layers = <0>;
         };
 
         media {
             bindings = <&tog 5>;
-            key-positions = <26 27>;
+            key-positions = <39 41>;
+            layers = <0 5>;
+        };
+
+        print {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <37 38>;
+            layers = <0>;
+        };
+
+        lwin {
+            bindings = <&lwin>;
+            key-positions = <36 37>;
+            layers = <0>;
+        };
+
+        rwin {
+            bindings = <&rwin>;
+            key-positions = <37 38>;
+            layers = <0>;
+        };
+
+        gaming {
+            bindings = <&tog 6>;
+            key-positions = <33 34 35>;
+            layers = <1 6>;
+        };
+    };
+
+    behaviors {
+        copyTAP: copyTAP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPYTAP";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&copyTAP>;
+        };
+
+        pasteTAP: pasteTAP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PASTETAP";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&pasteTAP>;
+        };
+
+        selextall: selextall {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SELEXTALL";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp LC(A)>;
+        };
+
+        escape: escape {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&tog 3>;
+        };
+
+        enter: enter {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENTER";
+            #binding-cells = <0>;
+            bindings = <&kp G>, <&kp ENTER>;
         };
     };
 
@@ -57,10 +135,10 @@
 
         base {
             bindings = <
-&lt 3 ESC       &kp Q     &kp W  &kp E     &kp R      &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A     &kp S  &kp D     &kp F      &kp G        &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
-&kp LCTRL       &kp LALT  &kp Z  &kp X     &kp C      &kp V        &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
-                                 &kp LGUI  &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
+&kp ESC         &kp Q       &kp W  &kp E     &kp R      &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
+&kp LEFT_SHIFT  &selextall  &kp S  &kp D     &kp F      &enter       &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
+&kp LCTRL       &kp LALT    &kp Z  &kp X     &copyTAP   &pasteTAP    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
+                                   &kp LGUI  &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
             >;
         };
 
@@ -92,10 +170,10 @@
 
         numpad {
             bindings = <
-&trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_DOT      &kp BACKSPACE      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp UP_ARROW    &kp ENTER          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOWN_ARROW  &trans             &trans  &trans  &trans  &trans  &trans  &trans
-                                    &kp NUMBER_0  &kp LEFT_ARROW  &kp RIGHT_ARROW    &trans  &trans  &trans
+&tog 3  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_DOT      &kp BACKSPACE      &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp UP_ARROW    &kp ENTER          &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOWN_ARROW  &trans             &trans     &trans  &trans  &trans  &trans  &trans
+                                    &kp NUMBER_0  &kp LEFT_ARROW  &kp RIGHT_ARROW    &kp ENTER  &trans  &trans
             >;
         };
 
@@ -114,6 +192,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOLUME_UP  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOL_DN     &trans     &trans     &trans  &trans  &trans
                         &trans  &trans  &trans    &kp LEFT         &kp SPACE  &kp RIGHT
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp ESC         &kp Q     &kp W  &kp E      &kp R          &kp T        &kp N1     &kp N2     &kp N3     &kp N4  &kp N5    &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A     &kp S  &kp D      &kp F          &kp G        &kp N6     &kp N7     &kp N8     &kp N9  &kp N0    &kp RSHFT
+&kp LCTRL       &kp LALT  &kp Z  &kp X      &kp C          &kp V        &kp B      &kp N      &kp M      &kp AT  &kp PIPE  &kp DEL
+                                 &kp ENTER  &kp RIGHT_ALT  &kp SPACE    &kp ENTER  &kp SPACE  &kp RCTRL
             >;
         };
 
