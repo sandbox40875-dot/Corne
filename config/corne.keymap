@@ -41,6 +41,11 @@
             bindings = <&kp ENTER>;
             key-positions = <16 17>;
         };
+
+        media {
+            bindings = <&tog 5>;
+            key-positions = <26 27>;
+        };
     };
 
     keymap {
@@ -100,6 +105,15 @@
 &bt BT_CLR  &bt BT_CLR_ALL  &none         &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
 &none       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
                                           &none         &none         &none           &none  &none  &none
+            >;
+        };
+
+        media {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOLUME_UP  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOL_DN     &trans     &trans     &trans  &trans  &trans
+                        &trans  &trans  &trans    &kp LEFT         &kp SPACE  &kp RIGHT
             >;
         };
 
