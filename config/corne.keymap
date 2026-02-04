@@ -34,7 +34,7 @@
 
         media {
             bindings = <&tog 5>;
-            key-positions = <38 36 37>;
+            key-positions = <3 4 5>;
             layers = <0 5>;
         };
 
@@ -58,13 +58,28 @@
 
         LAyer3 {
             bindings = <&tog 3>;
-            key-positions = <1 2>;
+            key-positions = <36 37 38>;
             layers = <0>;
         };
 
         NFILE {
             bindings = <&kp LC(N)>;
             key-positions = <27 28>;
+        };
+
+        wl {
+            bindings = <&lwin>;
+            key-positions = <13 14>;
+        };
+
+        wr {
+            bindings = <&rwin>;
+            key-positions = <15 16>;
+        };
+
+        layerbt {
+            bindings = <&tog 4>;
+            key-positions = <12 13>;
         };
     };
 
@@ -93,7 +108,7 @@
 &trans       &kp GRAVE  &kp EXCL  &kp AT     &kp HASH  &kp DLLR    &kp PRCNT  &kp CARET  &kp N7  &kp N8  &kp N9  &trans
 &trans       &kp LBKT   &kp RBKT  &kp SEMI   &kp SQT   &kp PIPE    &kp MINUS  &kp EQUAL  &kp N4  &kp N5  &kp N6  &trans
 &lt 4 LCTRL  &trans     &kp CAPS  &kp QMARK  &kp FSLH  &kp BSLH    &kp COMMA  &kp DOT    &kp N1  &kp N2  &kp N3  &kp KP_DOT
-                                  &lwin      &trans    &rwin       &trans     &kp PSCRN  &kp N0
+                                  &trans     &trans    &trans      &trans     &kp PSCRN  &kp N0
             >;
         };
 
@@ -130,10 +145,10 @@
 
         media {
             bindings = <
-&tog 5  &trans  &trans  &trans    &trans           &kp BACKSPACE    &trans           &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans           &kp ENTER        &kp C_VOLUME_UP  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &kp C_VOLUME_UP  &kp C_VOL_DN     &kp C_VOL_DN     &trans     &trans     &trans  &trans  &trans
-                        &kp LEFT  &kp RIGHT_ARROW  &trans           &kp LEFT         &kp SPACE  &kp RIGHT
+&tog 5  &none  &none  &none     &none            &none               &none            &none      &none      &none  &none  &none
+&none   &none  &none  &none     &kp UP_ARROW     &kp C_VOLUME_UP     &kp C_VOLUME_UP  &none      &none      &none  &none  &none
+&none   &none  &none  &none     &kp DOWN_ARROW   &kp C_VOL_DN        &kp C_VOL_DN     &none      &none      &none  &none  &none
+                      &kp LEFT  &kp RIGHT_ARROW  &kp K_PLAY_PAUSE    &kp LEFT         &kp SPACE  &kp RIGHT
             >;
         };
 
