@@ -183,10 +183,10 @@
 
         BT {
             bindings = <
-&none         &none           &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-&bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
-&kp NUMBER_4  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
-                                            &none         &none         &none           &none  &none  &none
+&none       &none           &none            &none         &none         &none           &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &bt BT_CLR_ALL  &kp KP_NUMBER_4  &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
+&trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+                                             &none         &none         &none           &none  &none  &none
             >;
         };
 
