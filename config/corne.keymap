@@ -29,14 +29,16 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
+            bindings = <&macro_tap>, <&kp LC(C)>;
+
             label = "COPY";
         };
 
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(V)>;
+            bindings = <&macro_tap>, <&kp LC(V)>;
+
             label = "PASTE";
         };
 
@@ -172,19 +174,19 @@
 
         numpad {
             bindings = <
-&tog 3  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_DOT      &kp BACKSPACE      &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp UP_ARROW    &kp ENTER          &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOWN_ARROW  &trans             &trans     &trans  &trans  &trans  &trans  &trans
-                                    &kp NUMBER_0  &kp LEFT_ARROW  &kp RIGHT_ARROW    &kp ENTER  &trans  &trans
+&tog 3  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_DOT      &kp BACKSPACE      &trans     &trans   &kp N7  &kp N8  &kp N9  &trans
+&trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp UP_ARROW    &kp ENTER          &trans     &trans   &kp N4  &kp N5  &kp N6  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOWN_ARROW  &trans             &trans     &kp DOT  &kp N1  &kp N2  &kp N3  &trans
+                                    &kp NUMBER_0  &kp LEFT_ARROW  &kp RIGHT_ARROW    &kp ENTER  &trans   &kp N0
             >;
         };
 
         BT {
             bindings = <
-&none       &none           &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-&bt BT_CLR  &bt BT_CLR_ALL  &none         &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
-&none       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
-                                          &none         &none         &none           &none  &none  &none
+&none         &none           &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none         &sys_reset      &none  &none  &none  &none  &none  &none
+&kp NUMBER_4  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+                                            &none         &none         &none           &none  &none  &none
             >;
         };
 
