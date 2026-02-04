@@ -34,64 +34,43 @@
 
         media {
             bindings = <&tog 5>;
-            key-positions = <39 41>;
+            key-positions = <38 36 37>;
             layers = <0 5>;
-        };
-
-        print {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <37 38>;
-            layers = <0>;
         };
 
         gaming {
             bindings = <&tog 6>;
-            key-positions = <33 34 35>;
-            layers = <1 6>;
-        };
-    };
-
-    behaviors {
-        selextalltap: selextalltap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SELEXTALLTAP";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&kp LC(A)>;
+            key-positions = <34 35 24 25>;
+            layers = <6 0>;
         };
 
-        qTap: qTap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "QTAP";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&tog 3>;
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17>;
+            layers = <0>;
         };
 
-        enterTap: enterTap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ENTERTAP";
-            #binding-cells = <0>;
-            bindings = <&kp G>, <&kp ENTER>;
+        back {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 5>;
+            layers = <0>;
         };
 
-        new_fileXTAP: new_fileXTAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_FILEXTAP";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp LC(N)>;
+        LAyer3 {
+            bindings = <&tog 3>;
+            key-positions = <0 1>;
+            layers = <0>;
         };
 
-        COPYTAP: COPYTAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COPYTAP";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&kp RC(C)>;
+        media2 {
+            bindings = <&tog 5>;
+            key-positions = <39 41 40>;
+            layers = <0 5>;
         };
 
-        pastetap: pastetap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PASTETAP";
-            #binding-cells = <0>;
-            bindings = <&kp V>, <&kp LC(V)>;
+        NFILE {
+            bindings = <&kp LC(N)>;
+            key-positions = <27 28>;
         };
     };
 
@@ -104,10 +83,10 @@
 
         base {
             bindings = <
-&kp ESC         &qTap          &kp W  &kp E          &lt 5 R    &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
-&kp LEFT_SHIFT  &selextalltap  &kp S  &kp D          &kp F      &enterTap    &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
-&kp LCTRL       &kp LALT       &kp Z  &new_fileXTAP  &COPYTAP   &pastetap    &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
-                                      &kp LGUI       &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
+&kp ESC         &kp Q     &kp W  &kp E     &lt 5 R    &kp T        &kp Y      &kp U        &kp I        &kp O   &kp P     &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A     &kp S  &kp D     &kp F      &kp G        &kp H      &kp J        &kp K        &kp L   &kp EXCL  &kp RSHFT
+&kp LCTRL       &kp LALT  &kp Z  &kp X     &kp C      &kp V        &kp B      &kp N        &kp M        &kp AT  &kp PIPE  &kp DEL
+                                 &kp LGUI  &lt 1 TAB  &kp SPACE    &kp ENTER  &lt 2 SPACE  &lt 1 KP_N0
             >;
         };
 
@@ -166,9 +145,9 @@
 
         gaming {
             bindings = <
-&kp ESC         &kp Q     &kp W  &kp E      &kp R          &kp T        &kp N1     &kp N2     &kp N3     &kp N4  &kp N5    &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A     &kp S  &kp D      &kp F          &kp G        &kp N6     &kp N7     &kp N8     &kp N9  &kp N0    &kp RSHFT
-&kp LCTRL       &kp LALT  &kp Z  &kp X      &kp C          &kp V        &kp B      &kp N      &kp M      &kp AT  &kp PIPE  &kp DEL
+&kp ESC         &kp Q     &kp W  &kp E      &kp R          &kp T        &kp N1     &kp N2     &kp N3     &kp N4  &kp N5  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A     &kp S  &kp D      &kp F          &kp G        &kp N6     &kp N7     &kp N8     &kp N9  &kp N0  &kp RSHFT
+&kp LCTRL       &kp LALT  &kp Z  &kp X      &kp C          &kp V        &kp B      &kp N      &kp M      &kp U   &kp I   &kp DEL
                                  &kp ENTER  &kp RIGHT_ALT  &kp SPACE    &kp ENTER  &kp SPACE  &kp RCTRL
             >;
         };
