@@ -101,7 +101,7 @@
 &trans       &kp GRAVE  &kp EXCL  &kp AT     &kp HASH  &kp DLLR    &kp PRCNT  &kp CARET        &kp N7      &kp N8  &kp N9  &trans
 &trans       &kp LBKT   &kp RBKT  &kp SEMI   &kp SQT   &kp PIPE    &kp MINUS  &kp EQUAL        &kp N4      &kp N5  &kp N6  &trans
 &lt 2 LCTRL  &trans     &kp CAPS  &kp QMARK  &kp FSLH  &kp BSLH    &kp COMMA  &kp DOT          &kp N1      &kp N2  &kp N3  &kp N0
-                                  &trans     &trans    &trans      &trans     &kp RIGHT_SHIFT  &kp KP_DOT
+                                  &lwin      &trans    &rwin       &trans     &kp RIGHT_SHIFT  &kp KP_DOT
             >;
         };
 
