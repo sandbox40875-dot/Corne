@@ -97,7 +97,7 @@
 &kp GRAVE     &kp N1            &kp N2             &kp N3          &kp N4           &kp N5         &kp N6     &kp N7          &kp N8     &kp N9                &kp N0                 &trans
 &kp CAPSLOCK  &kp EXCL          &kp AT_SIGN        &kp HASH        &kp DOLLAR       &kp PERCENT    &kp CARET  &kp AMPERSAND   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE       &kp MINUS  &kp UNDERSCORE  &kp PLUS   &kp EQUAL             &kp NON_US_BACKSLASH   &trans
-                                                   &tog 0          &trans           &trans         &trans     &kp SEMICOLON   &kp DOT
+                                                   &trans          &trans           &trans         &trans     &kp SEMICOLON   &kp DOT
             >;
         };
 
@@ -116,6 +116,15 @@
 &kp LEFT_SHIFT  &kp A     &kp S  &kp D      &kp F    &kp G        &kp N6     &kp N7     &kp N8     &kp N9  &kp N0  &kp RSHFT
 &kp LCTRL       &kp LALT  &kp Z  &kp X      &kp C    &kp V        &kp B      &kp N      &kp M      &kp U   &kp I   &kp DEL
                                  &kp ENTER  &kp TAB  &kp SPACE    &kp ENTER  &kp SPACE  &kp RCTRL
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
