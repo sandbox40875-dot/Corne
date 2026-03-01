@@ -1,6 +1,6 @@
 #include "corne.dtsi"
 
-/* Matrix scan (unchanged) */
+/* Matrix scan */
 &kscan0 {
     col-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 7 GPIO_ACTIVE_HIGH>,
@@ -16,7 +16,7 @@
     };
 };
 
-/* Configure SPI0 to use Pro Micro pin 6 (P1.15) */
+/* Configure SPI0 MOSI on P1.15 (Pro Micro pin 6) */
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -50,5 +50,9 @@
         chain-length = <6>;
 
         color-mapping = <1 0 2>;
+
+        /* REQUIRED for Zephyr 3.5+ */
+        spi-one-frame = <24>;
+        bits-per-symbol = <8>;
     };
 };
