@@ -16,7 +16,7 @@
     };
 };
 
-/* Use SPI0 MOSI on P1.15 (Pro Micro pin 6) */
+/* Configure SPI0 MOSI on P1.15 (Pro Micro pin 6) */
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -33,8 +33,8 @@
 };
 
 &spi0 {
-    compatible = "nordic,nrf-spim";
     status = "okay";
+    compatible = "nordic,nrf-spim";
 
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
@@ -42,7 +42,6 @@
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
-
         reg = <0>;
 
         spi-max-frequency = <4000000>;
@@ -51,10 +50,7 @@
 
         color-mapping = <1 0 2>;
 
-        /* REQUIRED timing definitions */
-        spi-one-frame  = <0xF0>;
-        spi-zero-frame = <0xC0>;
-
-        bits-per-symbol = <8>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
     };
 };
