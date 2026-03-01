@@ -8,75 +8,120 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    /* =========================
+     * MACROS
+     * ========================= */
+
+    macros {
+        /* Move window between virtual desktops */
+
+        rwin: rwin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RC(RIGHT_ARROW))>;
+        };
+
+        lwin: lwin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RC(LEFT_ARROW))>;
+        };
+
+        /* Office / Corporate Apps (Taskbar pinned) */
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        gaming {
+            bindings = <&tog 0>;
+            key-positions = <34 35 33>;
+            layers = <0>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        back {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 5>;
+            layers = <0>;
+        };
+
+        NFILE {
+            bindings = <&kp LC(N)>;
+            key-positions = <27 28>;
+        };
+
+        wl {
+            bindings = <&lwin>;
+            key-positions = <13 14>;
+        };
+
+        wr {
+            bindings = <&rwin>;
+            key-positions = <15 16>;
+        };
+
+        fn {
+            bindings = <&tog 2>;
+            key-positions = <31 32 33>;
+        };
+
+        print {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <36 37 38>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
-        /* =========================
+        /* =========================================================
          * BASE LAYER
-         * ========================= */
+         * ========================================================= */
+
         base {
             bindings = <
-&kp ESC     &kp Q    &kp W    &kp E    &kp R    &kp T       &kp Y    &kp U    &kp I    &kp O    &kp P    &kp BSPC
-&kp LSHFT   &kp A    &kp S    &kp D    &kp F    &kp G       &kp H    &kp J    &kp K    &kp L    &kp SQT  &kp RSHFT
-&kp LCTRL   &kp LALT &kp Z    &kp X    &kp C    &kp V       &kp B    &kp N    &kp M    &kp COMMA &kp DOT  &kp DEL
-                          &kp LGUI    &lt 1 TAB  &kp SPACE   &kp ENTER &lt 2 ESC  &kp PERIOD
+&kp ESC         &kp Q         &kp W  &kp E         &kp R      &kp T              &kp Y      &kp U        &kp I       &kp O      &kp P      &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A         &kp S  &kp D         &kp F      &kp G              &kp H      &kp J        &kp K       &kp L      &kp SQT    &kp RSHFT
+&kp LCTRL       &kp LEFT_ALT  &kp Z  &kp X         &kp C      &rgb_ug RGB_TOG    &kp B      &kp N        &kp M       &kp COMMA  &kp SLASH  &kp DELETE
+                                     &kp LEFT_GUI  &lt 1 TAB  &kp SPACE          &kp ENTER  &lt 2 COLON  &kt PERIOD
             >;
         };
 
-        /* =========================
-         * FN / RGB CONTROL LAYER
-         * ========================= */
-        fn {
-            bindings = <
-
-/* Row 1 */
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8   &kp F9   &kp F10  &kp F11  &kp F12
-
-/* Row 2 — RGB core controls */
-&bt BT_CLR
-&bt BT_CLR_ALL
-&rgb_ug_toggle          /* ON / OFF */
-&rgb_ug_mode            /* change effect */
-&rgb_ug_brt_up          /* brightness up */
-&rgb_ug_brt_down        /* brightness down */
-&rgb_ug_speed_up        /* animation speed up */
-&rgb_ug_speed_down      /* animation speed down */
-&rgb_ug_hue_up          /* color change */
-&rgb_ug_hue_down
-&rgb_ug_sat_up
-&rgb_ug_sat_down
-
-/* Row 3 — Bluetooth + media */
-&trans
-&bt BT_SEL 0
-&bt BT_SEL 1
-&bt BT_SEL 2
-&bt BT_SEL 3
-&bt BT_SEL 4
-&kp C_VOL_DN
-&kp C_VOL_UP
-&kp MUTE
-&trans
-&trans
-&trans
-
-/* Thumb row */
-                &trans   &trans   &kp SPACE   &kp ENTER   &trans   &trans
-            >;
-        };
-
-        /* =========================
-         * SYS LAYER
-         * ========================= */
         sys {
             bindings = <
-&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-&trans    &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-&trans    &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                     &trans &trans &trans &trans &trans &trans
+&kp GRAVE     &kp N1            &kp N2             &kp N3          &kp N4           &kp N5         &kp N6     &kp N7          &kp N8     &kp N9                &kp N0                 &trans
+&kp CAPSLOCK  &kp EXCL          &kp AT_SIGN        &kp HASH        &kp DOLLAR       &kp PERCENT    &kp CARET  &kp AMPERSAND   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE       &kp MINUS  &kp UNDERSCORE  &kp PLUS   &kp EQUAL             &kp NON_US_BACKSLASH   &trans
+                                                   &trans          &trans           &trans         &trans     &kp SEMICOLON   &kp DOT
             >;
         };
 
+        fn {
+            bindings = <
+&kp F1      &kp F2          &kp F3           &kp F4           &kp F5           &kp F6             &kp F7        &kp F8    &kp F9    &kp F10                           &kp F11                           &kp F12
+&bt BT_CLR  &bt BT_CLR_ALL  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG    &kp C_VOL_UP  &none     &kp UP    &rgb_ug RGB_COLOR_HSB(113,91,49)  &rgb_ug RGB_COLOR_HSB(243,97,37)  &none
+&trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp C_VOL_DN  &kp LEFT  &kp DOWN  &kp RIGHT                         &none                             &tog 2
+                                             &none            &none            &kp SPACE          &kp ENTER     &none     &none
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp ESC         &kp Q     &kp W  &kp E      &kp R    &kp T        &kp N1     &kp N2     &kp N3     &kp N4  &kp N5  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A     &kp S  &kp D      &kp F    &kp G        &kp N6     &kp N7     &kp N8     &kp N9  &kp N0  &kp RSHFT
+&kp LCTRL       &kp LALT  &kp Z  &kp X      &kp C    &kp V        &kp B      &kp N      &kp M      &kp U   &kp I   &kp DEL
+                                 &kp ENTER  &kp TAB  &kp SPACE    &kp ENTER  &kp SPACE  &kp RCTRL
+            >;
+        };
+
+        /* =========================================================
+         * HIDDEN / MAINTENANCE LAYER
+         * ========================================================= */
     };
 };
