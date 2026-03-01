@@ -5,7 +5,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
+
+
+// Include the WS2812 widget behavior
+#include <behaviors/ws2812_widget.dtsi>
+
+
+
 
 / {
     /* =========================
@@ -105,7 +111,7 @@
         fn {
             bindings = <
 &kp F1      &kp F2          &kp F3           &kp F4           &kp F5           &kp F6            &kp F7        &kp F8    &kp F9    &kp F10                           &kp F11                           &kp F12
-&bt BT_CLR  &bt BT_CLR_ALL  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_ON    &kp C_VOL_UP  &none     &kp UP    &rgb_ug RGB_COLOR_HSB(113,91,49)  &rgb_ug RGB_COLOR_HSB(243,97,37)  &none
+&bt BT_CLR  &bt BT_CLR_ALL  &none  &none  &none  &ws2812_wdg    &kp C_VOL_UP  &none     &kp UP    &none  &none  &none
 &trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4      &kp C_VOL_DN  &kp LEFT  &kp DOWN  &kp RIGHT                         &none                             &tog 2
                                              &none            &none            &kp SPACE         &kp ENTER     &none     &none
             >;
