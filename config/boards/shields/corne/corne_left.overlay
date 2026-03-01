@@ -16,7 +16,7 @@
     };
 };
 
-/* Configure SPI0 MOSI on P1.15 (Pro Micro pin 6) */
+/* Use SPI0 MOSI on P1.15 (Pro Micro pin 6) */
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -51,8 +51,10 @@
 
         color-mapping = <1 0 2>;
 
-        /* REQUIRED for Zephyr 3.5+ */
-        spi-one-frame = <24>;
+        /* REQUIRED timing definitions */
+        spi-one-frame  = <0xF0>;
+        spi-zero-frame = <0xC0>;
+
         bits-per-symbol = <8>;
     };
 };
