@@ -12,3 +12,17 @@
                 <&pro_micro 4 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 };
+
+
+/ {
+    ws2812_underglow: ws2812 {
+        compatible = "worldsemi,ws2812-gpio";
+        in-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+        chain-length = <9>;
+        color-mapping = <1 0 2>;
+    };
+
+    chosen {
+        zmk,underglow = &ws2812_underglow;
+    };
+};
