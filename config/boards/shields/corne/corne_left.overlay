@@ -15,7 +15,7 @@
         compatible = "worldsemi,ws2812-gpio";
 
         /* Pro Micro D6 */
-        in-gpios = <&pro_micro 6 GPIO_ACTIVE_HIGH>;
+        in-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;
 
         chain-length = <6>;
         color-mapping = <1 0 2>;
