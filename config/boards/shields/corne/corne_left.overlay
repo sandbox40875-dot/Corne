@@ -4,7 +4,7 @@
 &kscan0 {
     col-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 7 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 9 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 8 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 5 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 4 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
@@ -15,7 +15,7 @@
         compatible = "worldsemi,ws2812-gpio";
 
         /* Pro Micro D6 */
-        in-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;
+        in-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 
         chain-length = <6>;
         color-mapping = <1 0 2>;
