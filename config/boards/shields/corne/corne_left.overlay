@@ -10,18 +10,3 @@
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 };
 
-/ {
-    ws2812_left: ws2812 {
-        compatible = "worldsemi,ws2812-gpio";
-
-        /* Pro Micro D6 */
-        in-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
-
-        chain-length = <6>;
-        color-mapping = <1 0 2>;
-    };
-
-    chosen {
-        zmk,underglow = &ws2812_left;
-    };
-};
