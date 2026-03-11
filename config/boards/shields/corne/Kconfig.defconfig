@@ -1,7 +1,7 @@
 if SHIELD_CORNE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "MK42_Keyboard"
+    default "MK42Keyboard"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
