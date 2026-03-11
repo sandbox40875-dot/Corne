@@ -116,10 +116,10 @@
 
         arrrow {
             bindings = <
-&trans  &trans          &kp UP_ARROW    &trans           &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans          &trans           &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans           &trans  &trans    &trans  &trans  &trans
+&trans           &trans          &kp UP_ARROW    &trans           &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp C_VOLUME_UP  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp C_VOL_DN     &trans          &trans          &trans           &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                                 &trans           &trans  &trans    &trans  &trans  &trans
             >;
         };
 
