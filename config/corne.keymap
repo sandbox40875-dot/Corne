@@ -34,7 +34,7 @@
 
         gaming {
             bindings = <&tog 0>;
-            key-positions = <34 35 33>;
+            key-positions = <34 35 33 26 25 24>;
             layers = <0>;
         };
 
@@ -63,11 +63,6 @@
         wr {
             bindings = <&rwin>;
             key-positions = <15 16>;
-        };
-
-        fn {
-            bindings = <&tog 2>;
-            key-positions = <31 32 33>;
         };
 
         print {
