@@ -69,6 +69,11 @@
             bindings = <&kp PRINTSCREEN>;
             key-positions = <36 37 38>;
         };
+
+        appswitch {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <25 26>;
+        };
     };
 
     keymap {
