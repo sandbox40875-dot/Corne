@@ -92,7 +92,7 @@
             label = "FIREWALL";
         };
 
-        warning: warning {
+        template: warning {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -106,22 +106,6 @@
                 <&macro_wait_time 88>;
 
             label = "WARNING";
-        };
-
-        firewall: firewall {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 20>,
-                <&macro_wait_time 65>,
-                <&macro_wait_time 20>,
-                <&macro_wait_time 27>,
-                <&macro_wait_time 24>,
-                <&macro_wait_time 74>,
-                <&macro_wait_time 45>,
-                <&macro_wait_time 88>;
-
-            label = "FIREWALL";
         };
 
         /* Office / Corporate Apps (Taskbar pinned) */
@@ -198,7 +182,7 @@
 
         base {
             bindings = <
-&kp ESC         &kp Q         &kp W    &kp E         &kp R      &kp T          &kp Y      &kp U        &kp I       &kp O      &kp P      &kp BACKSPACE
+&lt 5 ESCAPE    &kp Q         &kp W    &kp E         &kp R      &kp T          &kp Y      &kp U        &kp I       &kp O      &kp P      &kp BACKSPACE
 &kp LEFT_SHIFT  &kp A         &kp S    &kp D         &kp F      &kp G          &kp H      &kp J        &kp K       &kp L      &kp SQT    &kp RSHFT
 &kp LCTRL       &kp LEFT_ALT  &lt 4 Z  &kp X         &kp C      &kp V          &kp B      &kp N        &kp M       &kp COMMA  &kp SLASH  &kp DELETE
                                        &kp LEFT_GUI  &lt 1 TAB  &lt 2 SPACE    &kp ENTER  &lt 1 COLON  &kp PERIOD
