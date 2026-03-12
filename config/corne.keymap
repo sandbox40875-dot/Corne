@@ -26,6 +26,13 @@
             bindings = <&kp LG(RC(LEFT_ARROW))>;
         };
 
+        email: email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp H &kp A &kp R &kp W &kp I &kp N &kp D &kp E &kp R &kp DOT &kp S &kp I &kp N &kp G &kp H &kp AT &kp P &kp H &kp I &kp L &kp I &kp P &kp S &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL";
+        };
+
         /* Office / Corporate Apps (Taskbar pinned) */
     };
 
@@ -33,8 +40,8 @@
         compatible = "zmk,combos";
 
         gaming {
-            bindings = <&tog 0>;
-            key-positions = <34 35 33 26 25 24>;
+            bindings = <&tog 3>;
+            key-positions = <34 35 33>;
             layers = <0>;
         };
 
@@ -78,6 +85,16 @@
         lt4 {
             bindings = <&tog 4>;
             key-positions = <5 17 29>;
+        };
+
+        att {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <12 14>;
+        };
+
+        escla {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <12 13>;
         };
     };
 
@@ -126,10 +143,10 @@
 
         arrrow {
             bindings = <
-&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none   &none  &none  &none  &none  &none
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none   &none  &none  &none  &none  &none
-&trans  &none           &none           &none            &none  &none              &none   &none  &none  &none  &none  &none
-                                        &tog 0           &none  &trans             &trans  &none  &none
+&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none   &none  &none  &none  &email  &none
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none   &none  &none  &none  &none   &none
+&trans  &none           &none           &none            &none  &none              &none   &none  &none  &none  &none   &none
+                                        &none            &none  &trans             &trans  &none  &none
             >;
         };
 
