@@ -26,7 +26,79 @@
             bindings = <&kp LG(RC(LEFT_ARROW))>;
         };
 
-        /* Office / Corporate Apps (Taskbar pinned) */
+        email: email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp H &kp A &kp R &kp W>,
+                <&macro_wait_time 100>,
+                <&kp I &kp N>,
+                <&macro_wait_time 123>,
+                <&kp D &kp E &kp R>,
+                <&macro_wait_time 111>,
+                <&kp DOT &kp S &kp I>,
+                <&macro_wait_time 99>,
+                <&kp N &kp G &kp H &kp AT>,
+                <&macro_wait_time 87>,
+                <&kp P &kp H &kp I>,
+                <&macro_wait_time 132>,
+                <&kp L &kp I &kp P &kp S>,
+                <&macro_wait_time 145>,
+                <&kp DOT>,
+                <&macro_wait_time 124>,
+                <&kp C &kp O &kp M>;
+
+            label = "EMAIL";
+        };
+
+        Rimku: Rimku {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LS(R)>,
+                <&macro_wait_time 100>,
+                <&kp EXCL>,
+                <&macro_wait_time 112>,
+                <&kp M>,
+                <&macro_wait_time 74>,
+                <&kp K>,
+                <&macro_wait_time 120>,
+                <&kp U>,
+                <&macro_wait_time 102>,
+                <&kp N5>,
+                <&macro_wait_time 99>,
+                <&kp I>,
+                <&macro_wait_time 89>,
+                <&kp S &kp E>,
+                <&macro_wait_time 77>,
+                <&kp AT>;
+
+            label = "RIMKU";
+        };
+
+        firewall: firewall {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LS(F)>,
+                <&macro_wait_time 103>,
+                <&kp EXCL>,
+                <&macro_wait_time 110>,
+                <&kp R>,
+                <&macro_wait_time 109>,
+                <&kp E>,
+                <&macro_wait_time 77>,
+                <&kp W>,
+                <&macro_wait_time 88>,
+                <&kp AT>,
+                <&macro_wait_time 74>,
+                <&kp L &kp L>,
+                <&macro_wait_time 87>,
+                <&kp AT_SIGN>;
+
+            label = "FIREWALL";
+        };
+
     };
 
     combos {
@@ -145,10 +217,10 @@
 
         macro {
             bindings = <
-&none   &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&trans  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none   &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                      &none  &none  &none    &none  &none  &none
+&none  &none  &none  &none  &Rimku     &none    &none  &none  &none  &none  &email  &none
+&none  &none  &none  &none  &firewall  &none    &none  &none  &none  &none  &none   &none
+&none  &none  &none  &none  &none      &none    &none  &none  &none  &none  &none   &none
+                     &none  &none      &none    &none  &none  &none
             >;
         };
 
