@@ -74,6 +74,11 @@
             bindings = <&kp LA(TAB)>;
             key-positions = <25 26>;
         };
+
+        lt4 {
+            bindings = <&tog 4>;
+            key-positions = <5 17 29>;
+        };
     };
 
     keymap {
@@ -121,10 +126,10 @@
 
         arrrow {
             bindings = <
-&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none  &none  &none  &none  &none  &none
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none  &none  &none  &none  &none  &none
-&trans  &none           &none           &none            &none  &none              &none  &none  &none  &none  &none  &none
-                                        &tog 0           &none  &none              &none  &none  &none
+&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none   &none  &none  &none  &none  &none
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none   &none  &none  &none  &none  &none
+&trans  &none           &none           &none            &none  &none              &none   &none  &none  &none  &none  &none
+                                        &tog 0           &none  &trans             &trans  &none  &none
             >;
         };
 
