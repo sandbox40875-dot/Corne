@@ -33,6 +33,27 @@
             label = "EMAIL";
         };
 
+        rimku: rimku {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(R) &kp EXCL &kp M &kp K &kp U &kp N5 &kp I &kp S &kp E &kp AT>;
+            label = "RIMKU";
+        };
+
+        firewall: firewall {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(F) &kp EXCL &kp R &kp E &kp W &kp AT &kp L &kp L &kp AT>;
+            label = "FIREWALL";
+        };
+
+        warning: warning {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(W) &kp AT &kp R &kp N &kp EXCL &kp N &kp G &kp AT>;
+            label = "WARNING";
+        };
+
         /* Office / Corporate Apps (Taskbar pinned) */
     };
 
@@ -143,10 +164,19 @@
 
         arrrow {
             bindings = <
-&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none   &none  &none  &none  &email  &none
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none   &none  &none  &none  &none   &none
-&trans  &none           &none           &none            &none  &none              &none   &none  &none  &none  &none   &none
+&trans  &none           &kp UP_ARROW    &none            &none  &kp C_VOLUME_UP    &none   &none  &none  &none  &none  &none
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp C_VOL_DN       &none   &none  &none  &none  &none  &none
+&trans  &none           &none           &none            &none  &none              &none   &none  &none  &none  &none  &none
                                         &none            &none  &trans             &trans  &none  &none
+            >;
+        };
+
+        macro {
+            bindings = <
+&none  &none  &warning  &none  &rimku     &none    &none  &none  &none  &none  &email  &none
+&none  &none  &none     &none  &firewall  &none    &none  &none  &none  &none  &none   &none
+&none  &none  &none     &none  &none      &none    &none  &none  &none  &none  &none   &none
+                        &none  &none      &none    &none  &none  &none
             >;
         };
 
