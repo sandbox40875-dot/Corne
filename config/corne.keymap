@@ -80,14 +80,21 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&kp LS(F)>,
                 <&macro_wait_time 20>,
+                <&kp EXCL>,
                 <&macro_wait_time 20>,
+                <&kp R>,
                 <&macro_wait_time 65>,
+                <&kp E>,
                 <&macro_wait_time 27>,
+                <&kp W>,
                 <&macro_wait_time 24>,
+                <&kp AT>,
                 <&macro_wait_time 74>,
-                <&macro_wait_time 88>,
-                <&macro_wait_time 45>;
+                <&kp L &kp L>,
+                <&macro_wait_time 45>,
+                <&kp AT_SIGN>;
 
             label = "FIREWALL";
         };
@@ -227,10 +234,10 @@
 
         macro {
             bindings = <
-&none  &none  &none  &none  &Rimku  &none    &none  &none  &none  &none  &email  &none
-&none  &none  &none  &none  &none   &none    &none  &none  &none  &none  &none   &none
-&none  &none  &none  &none  &none   &none    &none  &none  &none  &none  &none   &none
-                     &none  &none   &none    &none  &none  &none
+&none  &none  &none  &none  &Rimku     &none    &none  &none  &none  &none  &email  &none
+&none  &none  &none  &none  &firewall  &none    &none  &none  &none  &none  &none   &none
+&none  &none  &none  &none  &none      &none    &none  &none  &none  &none  &none   &none
+                     &none  &none      &none    &none  &none  &none
             >;
         };
 
