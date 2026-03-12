@@ -29,29 +29,99 @@
         email: email {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp H &kp A &kp R &kp W &kp I &kp N &kp D &kp E &kp R &kp DOT &kp S &kp I &kp N &kp G &kp H &kp AT &kp P &kp H &kp I &kp L &kp I &kp P &kp S &kp DOT &kp C &kp O &kp M>;
+            bindings =
+                <&kp H &kp A &kp R &kp W>,
+                <&macro_wait_time 20>,
+                <&kp I &kp N>,
+                <&macro_wait_time 65>,
+                <&kp D &kp E &kp R>,
+                <&macro_wait_time 20>,
+                <&kp DOT &kp S &kp I>,
+                <&macro_wait_time 27>,
+                <&kp N &kp G &kp H &kp AT>,
+                <&macro_wait_time 24>,
+                <&kp P &kp H &kp I>,
+                <&macro_wait_time 74>,
+                <&kp L &kp I &kp P &kp S>,
+                <&macro_wait_time 45>,
+                <&kp DOT>,
+                <&macro_wait_time 88>,
+                <&kp C &kp O &kp M>;
+
             label = "EMAIL";
         };
 
-        rimku: rimku {
+        Rimku: Rimku {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(R) &kp EXCL &kp M &kp K &kp U &kp N5 &kp I &kp S &kp E &kp AT>;
+            bindings =
+                <&kp LS(R)>,
+                <&macro_wait_time 65>,
+                <&kp EXCL>,
+                <&macro_wait_time 20>,
+                <&kp M>,
+                <&macro_wait_time 74>,
+                <&kp K>,
+                <&macro_wait_time 24>,
+                <&kp U>,
+                <&macro_wait_time 20>,
+                <&kp N5>,
+                <&macro_wait_time 45>,
+                <&kp I>,
+                <&macro_wait_time 27>,
+                <&kp S &kp E>,
+                <&macro_wait_time 88>,
+                <&kp AT>;
+
             label = "RIMKU";
         };
 
         firewall: firewall {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(F) &kp EXCL &kp R &kp E &kp W &kp AT &kp L &kp L &kp AT>;
+            bindings =
+                <&macro_wait_time 20>,
+                <&macro_wait_time 20>,
+                <&macro_wait_time 65>,
+                <&macro_wait_time 27>,
+                <&macro_wait_time 24>,
+                <&macro_wait_time 74>,
+                <&macro_wait_time 88>,
+                <&macro_wait_time 45>;
+
             label = "FIREWALL";
         };
 
         warning: warning {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(W) &kp AT &kp R &kp N &kp EXCL &kp N &kp G &kp AT>;
+            bindings =
+                <&macro_wait_time 20>,
+                <&macro_wait_time 65>,
+                <&macro_wait_time 20>,
+                <&macro_wait_time 27>,
+                <&macro_wait_time 24>,
+                <&macro_wait_time 74>,
+                <&macro_wait_time 45>,
+                <&macro_wait_time 88>;
+
             label = "WARNING";
+        };
+
+        firewall: firewall {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 20>,
+                <&macro_wait_time 65>,
+                <&macro_wait_time 20>,
+                <&macro_wait_time 27>,
+                <&macro_wait_time 24>,
+                <&macro_wait_time 74>,
+                <&macro_wait_time 45>,
+                <&macro_wait_time 88>;
+
+            label = "FIREWALL";
         };
 
         /* Office / Corporate Apps (Taskbar pinned) */
@@ -173,10 +243,10 @@
 
         macro {
             bindings = <
-&none  &none  &warning  &none  &rimku     &none    &none  &none  &none  &none  &email  &none
-&none  &none  &none     &none  &firewall  &none    &none  &none  &none  &none  &none   &none
-&none  &none  &none     &none  &none      &none    &none  &none  &none  &none  &none   &none
-                        &none  &none      &none    &none  &none  &none
+&none  &none  &none  &none  &Rimku  &none    &none  &none  &none  &none  &email  &none
+&none  &none  &none  &none  &none   &none    &none  &none  &none  &none  &none   &none
+&none  &none  &none  &none  &none   &none    &none  &none  &none  &none  &none   &none
+                     &none  &none   &none    &none  &none  &none
             >;
         };
 
