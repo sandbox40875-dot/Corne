@@ -26,31 +26,6 @@
             bindings = <&kp LG(RC(LEFT_ARROW))>;
         };
 
-        email: email {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp H &kp A &kp R &kp W>,
-                <&macro_wait_time 20>,
-                <&kp I &kp N>,
-                <&macro_wait_time 65>,
-                <&kp D &kp E &kp R>,
-                <&macro_wait_time 20>,
-                <&kp DOT &kp S &kp I>,
-                <&macro_wait_time 27>,
-                <&kp N &kp G &kp H &kp AT>,
-                <&macro_wait_time 24>,
-                <&kp P &kp H &kp I>,
-                <&macro_wait_time 74>,
-                <&kp L &kp I &kp P &kp S>,
-                <&macro_wait_time 45>,
-                <&kp DOT>,
-                <&macro_wait_time 88>,
-                <&kp C &kp O &kp M>;
-
-            label = "EMAIL";
-        };
-
         Rimku: Rimku {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
