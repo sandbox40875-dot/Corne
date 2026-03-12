@@ -1,20 +1,7 @@
-# =====================================================
-# Corne Split Configuration
-# =====================================================
-
 if SHIELD_CORNE_LEFT
 
-# Left side acts as the BLE central (connects to computer)
+# Left half acts as central (connects to computer)
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-
-if SHIELD_CORNE_RIGHT
-
-# Right side acts as peripheral (connects to left half)
-config ZMK_SPLIT_ROLE_PERIPHERAL
     default y
 
 endif
@@ -26,7 +13,7 @@ if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 config ZMK_SPLIT
     default y
 
-# Bluetooth device name (advertised name)
+# Bluetooth device name
 config BT_DEVICE_NAME
     default "MK42Keyboard"
 
@@ -34,7 +21,7 @@ config BT_DEVICE_NAME
 config BT_MAX_PAIRED
     default 5
 
-# Improve Windows BLE compatibility
+# Improve BLE compatibility
 config ZMK_BLE_PASSKEY_ENTRY
     default n
 
